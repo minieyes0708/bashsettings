@@ -1,9 +1,11 @@
-vicd()
+vifm()
 {
-    local dst="$(command vifm --choose-dir - "$@")"
-    if [ -z "$dst" ]; then
-        echo 'Directory picking cancelled/failed'
-        return 1
+    if [ -f ~/.vifm/lastdir ]; then
+        rm ~/.vifm/lastdir
     fi
-    cd "$dst"
+    winpty /l/vifm-w64-se-0.11-binary/vifm.exe "$@"
+    if [ -f ~/.vifm/lastdir ]; then
+        cd `cat ~/.vifm/lastdir`
+		rm ~/.vifm/lastdir
+    fi
 }

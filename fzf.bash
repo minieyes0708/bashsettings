@@ -30,7 +30,7 @@ fav() {
 			for dir in ${fixed_dirs[*]}; do
 				echo "${dir}"
 			done
-		} | fzf --query "$1"
+		} | winpty fzf --query "$1"
 	)
 
 	if [[ ! -z ${target_dir} ]] && [[ ${top_dirs[*]} == *"${target_dir}"* ]]; then
@@ -40,7 +40,7 @@ fav() {
 				for dir in $(fd --max-depth 1 --type d); do
 					echo "${target_dir}/${dir}"
 				done
-			} | fzf --query "$1"
+			} | winpty fzf --query "$1"
 		)
 	fi
 

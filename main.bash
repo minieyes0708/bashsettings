@@ -1,6 +1,6 @@
-if [ -d "~/.bashrc.d" ]; then
-	for file in $(ls ~/.bashrc.d); do
-		fullfile="~/.bashrc.d/$file"
+if [ -d "$HOME/.bashrc.d" ]; then
+	for file in $(ls $HOME/.bashrc.d); do
+		fullfile="$HOME/.bashrc.d/$file"
 		if [ -r "$fullfile" ] && [ "$file" != 'main.bash' ]; then
 			. $fullfile
 		fi

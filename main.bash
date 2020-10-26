@@ -6,4 +6,3 @@ if [ -d "$HOME/.bashrc.d" ]; then
 		fi
 	done
 fi
-

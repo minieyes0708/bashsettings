@@ -5,21 +5,12 @@ _fzf_compgen_dir() {
 	fd --type d --hidden --follow --exclude ".git" --exclude ".svn" --exclude "__history" --exclude ".vscode" --exclude ".vs" . "$1"
 }
 fav() {
-	local top_dirs=(
-		"/j//"
-		"/k//"
-		"/l//"
-		"/m//"
-		"/n//"
-	)
-	local fixed_dirs=(
-		"/d/Downloads"
-		"/c/Users/minieyes/Desktop"
-	)
+	local IFS=:
+	read -r -a top_dirs <<< $FZF_TOP_DIRS
+	read -r -a fixed_dirs <<< $FZF_FIXED_DIRS
 
 	local target_dir=$(
 		{
-			local IFS=:
 			for dir in ${top_dirs[*]}; do
 				echo "${dir}"
 			done

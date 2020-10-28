@@ -23,9 +23,10 @@ fav() {
 	if [[ ! -z ${target_dir} ]] && [[ ${top_dirs[*]} == *"${target_dir}"* ]]; then
 		target_dir=$(
 			{
+				local IFS=$'\n'
 				cd "${target_dir}"
 				for dir in $(fd --max-depth 1 --type d); do
-					echo "${target_dir}/${dir}"
+					echo "${target_dir}${dir}"
 				done
 			} | fzf --query "$1"
 		)

@@ -1,8 +1,8 @@
 _fzf_compgen_path() {
-	fd --hidden --follow --exclude ".git" --exclude ".svn" --exclude "__history" --exclude ".vscode" --exclude ".vs" . "$1"
+	fd --max-depth 1 --hidden --follow --exclude ".git" --exclude ".svn" --exclude "__history" --exclude ".vscode" --exclude ".vs" . "$1"
 }
 _fzf_compgen_dir() {
-	fd --type d --hidden --follow --exclude ".git" --exclude ".svn" --exclude "__history" --exclude ".vscode" --exclude ".vs" . "$1"
+	fd --type d --max-depth 1 --hidden --follow --exclude ".git" --exclude ".svn" --exclude "__history" --exclude ".vscode" --exclude ".vs" . "$1"
 }
 fav() {
 	local IFS=:
@@ -36,4 +36,4 @@ fav() {
 		cd "${target_dir}"
 	fi
 }
-
+export FZF_COMPLETION_TRIGGER=''

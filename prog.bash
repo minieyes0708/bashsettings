@@ -2,12 +2,12 @@ prog()
 {
 	local prog=$(cat ~/.bashrc.d/user/programs.txt | fzf)
 	if [[ ! -z "$prog" ]]; then
-		$prog
+		$prog $*
 	fi
 }
 p()
 {
-	prog
+	prog $*
 }
 progedit()
 {

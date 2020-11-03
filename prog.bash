@@ -2,9 +2,7 @@ prog()
 {
 	local prog=$(cat ~/.bashrc.d/user/programs.txt | fzf)
 	if [[ ! -z "$prog" ]]; then
-		cd $(dirname $prog)
-		START "" $prog
-		cd -
+		$prog
 	fi
 }
 p()

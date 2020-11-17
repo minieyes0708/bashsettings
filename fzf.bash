@@ -36,4 +36,3 @@ fav() {
 		cd "${target_dir}"
 	fi
 }
-export FZF_COMPLETION_TRIGGER='..'

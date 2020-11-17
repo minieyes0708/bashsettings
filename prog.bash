@@ -1,6 +1,6 @@
 prog()
 {
-	local prog=$(cat ~/.bashrc.d/user/programs.txt | fzf)
+	local prog=$(cat ~/.bashrc.d/user/programs.txt | fzf | bash)
 	if [[ ! -z "$prog" ]]; then
 		$prog $*
 	fi

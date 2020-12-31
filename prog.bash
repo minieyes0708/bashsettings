@@ -1,6 +1,6 @@
 prog()
 {
-    local PROG=$(cat ~/.bashrc.d/user/programs.txt | fzf)
+    local PROG=$(cat ~/.bashrc.d/user/programs.txt | fzy)
     $PROG $*
 }
 p()

@@ -1,5 +1,9 @@
 export PATH=$PATH:~/bin
 
+if [ "$USERDOMAIN" == "NOVATEK" ]; then
+    export PYTHONPATH='.;D:\minieyes_chen\program\python'
+fi
+
 function get_git_branch_name {
 	branch_name=$(git branch 2>/dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
 

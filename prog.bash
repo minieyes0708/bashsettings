@@ -1,7 +1,9 @@
 prog()
 {
     local PROG=$(cat ~/.bashrc.d/user/programs.txt | fzy)
-    $PROG $*
+    echo $PROG $* > ~/tmp.sh
+    bash ~/tmp.sh
+    rm ~/tmp.sh
 }
 p()
 {

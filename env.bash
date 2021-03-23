@@ -1,4 +1,6 @@
 export PATH=$PATH:~/bin
+export TMP="C:/Users/$USERNAME/AppData/Local/Temp"
+export TEMP="C:/Users/$USERNAME/AppData/Local/Temp"
 
 if [ "$USERDOMAIN" == "NOVATEK" ]; then
     export PYTHONPATH='.;D:\minieyes_chen\program\python'

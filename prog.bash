@@ -1,6 +1,6 @@
 prog()
 {
-    local PROG=$(cat ~/.bashrc.d/user/programs.txt | fzf -l 80)
+    local PROG=$(cat ~/.bashrc.d/user/programs.txt | fzf)
     echo $PROG $* > ~/tmp.sh
     bash ~/tmp.sh
     rm ~/tmp.sh

@@ -1,19 +1,19 @@
 prog()
 {
-    local PROG=$(cat ~/.bashrc.d/user/programs.txt | fzy -l 80)
+    local PROG=$(cat ~/.bashrc.d/user/programs.txt | fzf -l 80)
     echo $PROG $* > ~/tmp.sh
     bash ~/tmp.sh
     rm ~/tmp.sh
 }
 p()
 {
-	prog $*
+    prog $*
 }
 progedit()
 {
-	gvim ~/.bashrc.d/user/programs.txt&
+    gvim ~/.bashrc.d/user/programs.txt&
 }
 pe()
 {
-	progedit
+    progedit
 }
